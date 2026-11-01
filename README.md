@@ -1,14 +1,19 @@
 # PharmaLocator
 
 **Project Name:** PharmaLocator
+
 **Student:** ISHIMWE Emmanuel
+
 **Student ID:** 26424
+
 **Course:** INSY 8322 – Web Technology and Internet
+
 **University:** Adventist University of Central Africa (AUCA)
+
 
 ## Technologies
 
-- Java 25 (LTS)
+- Java 17
 - Spring Boot
 - Spring Data JPA
 - PostgreSQL
@@ -22,17 +27,17 @@
 
 ## How to Run
 
-Install Java 25 (LTS), then run the Spring Boot application from the project root:
+Install Java 17, then run the Spring Boot application from the project root:
 
 ```bash
-export DB_PASSWORD="your-postgres-password"
+
 ./mvnw spring-boot:run
 ```
 
 On Windows PowerShell, set the variable and run:
 
 ```powershell
-$env:DB_PASSWORD = "your-postgres-password"
+
 .\mvnw.cmd spring-boot:run
 ```
 
