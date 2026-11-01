@@ -101,3 +101,5 @@ Import `pharma-locator-midterm.postman_collection.json` into Postman.
 
 ### Dashboard
 - GET /api/dashboard/summary
+
+# pharma-locator-backend
