@@ -1,0 +1,10 @@
+$kind: collection
+description: One request per PharmaLocator midterm requirement. Set the ID and customer-code variables to values from your database before running requests that need existing records.
+variables:
+  baseUrl: http://localhost:8082
+  customerId: 00000000-0000-0000-0000-000000000000
+  pharmacistId: 00000000-0000-0000-0000-000000000000
+  qualificationId: 00000000-0000-0000-0000-000000000000
+  drugRequestId: 00000000-0000-0000-0000-000000000000
+  saleLineId: 00000000-0000-0000-0000-000000000000
+  customerCode: PL-00731

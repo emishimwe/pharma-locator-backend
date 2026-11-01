@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8082/api/qualifications/unused
+method: GET
+order: 7000

@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8082/api/customers/save
+method: POST
+headers:
+  Content-Type: application/json
+order: 1000

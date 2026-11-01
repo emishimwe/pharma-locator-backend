@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8082/api/drug-requests/by-status?status=SUBMITTED
+method: GET
+queryParams:
+  status: SUBMITTED
+order: 3000

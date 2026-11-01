@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:8082/api/drug-requests/between?start=2026-10-01&end=2026-11-30
+method: GET
+queryParams:
+  start: 2026-10-01
+  end: 2026-11-30
+order: 4000

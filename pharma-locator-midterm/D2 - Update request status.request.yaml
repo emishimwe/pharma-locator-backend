@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8082/api/drug-requests/00000000-0000-0000-0000-000000000000/status?status=RESERVED
+method: PATCH
+queryParams:
+  status: RESERVED
+order: 10000

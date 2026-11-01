@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8082/api/sale-lines/save?drugRequestId=00000000-0000-0000-0000-000000000000
+method: POST
+headers:
+  Content-Type: application/json
+queryParams:
+  drugRequestId: 00000000-0000-0000-0000-000000000000
+order: 13000

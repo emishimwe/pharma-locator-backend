@@ -1,0 +1,277 @@
+{
+  "info": {
+    "name": "pharma-locator-midterm",
+    "description": "One request per PharmaLocator midterm requirement. Set the ID and customer-code variables to values from your database before running requests that need existing records.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8082"
+    },
+    {
+      "key": "customerId",
+      "value": "00000000-0000-0000-0000-000000000000",
+      "description": "Replace with a customer UUID created in your database."
+    },
+    {
+      "key": "pharmacistId",
+      "value": "00000000-0000-0000-0000-000000000000",
+      "description": "Replace with a pharmacist UUID created in your database."
+    },
+    {
+      "key": "qualificationId",
+      "value": "00000000-0000-0000-0000-000000000000",
+      "description": "Replace with a qualification UUID created in your database."
+    },
+    {
+      "key": "drugRequestId",
+      "value": "00000000-0000-0000-0000-000000000000",
+      "description": "Replace with a drug request UUID created in your database."
+    },
+    {
+      "key": "saleLineId",
+      "value": "00000000-0000-0000-0000-000000000000",
+      "description": "Replace with a sale line UUID created in your database."
+    },
+    {
+      "key": "customerCode",
+      "value": "PL-00731",
+      "description": "Replace with a customerCode in your database."
+    }
+  ],
+  "item": [
+    {
+      "name": "A2 - Save customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"firstName\": \"Emmanuel\",\n  \"lastName\": \"Ishimwe\",\n  \"customerCode\": \"PL-00731\",\n  \"phone\": \"+250780000001\",\n  \"district\": \"Kicukiro\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/customers/save"
+        }
+      }
+    },
+    {
+      "name": "B1 - Customers by district",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/customers/by-district?district=kicukiro"
+        }
+      }
+    },
+    {
+      "name": "B2 - Drug requests by status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/drug-requests/by-status?status=SUBMITTED"
+        }
+      }
+    },
+    {
+      "name": "B3 - Drug requests between dates",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/drug-requests/between?start=2026-10-01&end=2026-11-30"
+        }
+      }
+    },
+    {
+      "name": "C1 - Pharmacists by qualification",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/pharmacists/by-qualification?name=Clinical"
+        }
+      }
+    },
+    {
+      "name": "C2 - Free pharmacies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/pharmacies/free"
+        }
+      }
+    },
+    {
+      "name": "C3 - Unused qualifications",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/qualifications/unused"
+        }
+      }
+    },
+    {
+      "name": "C4 - Customers of pharmacist",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/customers/of-pharmacist/{{pharmacistId}}"
+        }
+      }
+    },
+    {
+      "name": "D1 - Save drug request",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"requestDate\": \"2026-11-15\",\n  \"status\": \"DECLINED\",\n  \"drugName\": \"Paracetamol\",\n  \"customer\": {\n    \"id\": \"{{customerId}}\"\n  },\n  \"pharmacist\": {\n    \"id\": \"{{pharmacistId}}\"\n  }\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/drug-requests/save"
+        }
+      }
+    },
+    {
+      "name": "D2 - Update request status",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/drug-requests/{{drugRequestId}}/status?status=RESERVED"
+        }
+      }
+    },
+    {
+      "name": "D3 - Add qualification to pharmacist",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/pharmacists/{{pharmacistId}}/qualifications/{{qualificationId}}"
+        }
+      }
+    },
+    {
+      "name": "D4 - Assign pharmacy to pharmacist",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/pharmacists/{{pharmacistId}}/pharmacy?licenseNumber=3104"
+        }
+      }
+    },
+    {
+      "name": "E1 - Save sale line",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"drugName\": \"Coartem 80/480\",\n  \"dosageNote\": \"Take twice daily for three days\",\n  \"quantity\": 6\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/sale-lines/save?drugRequestId={{drugRequestId}}"
+        }
+      }
+    },
+    {
+      "name": "E2 - Sale lines by customer code",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/sale-lines/customer/{{customerCode}}"
+        }
+      }
+    },
+    {
+      "name": "E3 - Delete drug request",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/drug-requests/delete/{{drugRequestId}}"
+        }
+      }
+    },
+    {
+      "name": "F1 - Drug request stats by status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/drug-requests/stats/by-status"
+        }
+      }
+    },
+    {
+      "name": "F2 - Cancel pharmacist day",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/drug-requests/cancel-day?pharmacistId={{pharmacistId}}&date=2026-10-20"
+        }
+      }
+    },
+    {
+      "name": "+5 - Dashboard summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/dashboard/summary"
+        }
+      }
+    },
+    {
+      "name": "+5 - Page drug requests",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/drug-requests/page?page=0&size=5&sort=requestDate,desc"
+        }
+      }
+    }
+  ]
+}

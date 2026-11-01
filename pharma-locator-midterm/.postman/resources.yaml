@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: 13d9994b-fe77-4b95-b6c0-83ef5db2bc86
+
+cloudResources:
+  collections:
+    ../postman/collections/pharma-locator-midterm: f40850ce-d28e-45b7-93f1-8c9d920f8409
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

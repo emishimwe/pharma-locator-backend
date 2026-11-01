@@ -1,0 +1,11 @@
+# Use this workspace to collaborate
+workspace:
+  id: 13d9994b-fe77-4b95-b6c0-83ef5db2bc86
+
+localResources:
+  collections:
+    - ../pharma-locator-midterm
+
+cloudResources:
+  collections:
+    ../postman/collections/pharma-locator-midterm Copy: 5e7167f9-7a8d-4f9a-898d-e85be067d546

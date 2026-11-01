@@ -1,0 +1,14 @@
+$kind: http-request
+url: ""
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "drugName": "Coartem 80/480",
+      "dosageNote": "Take twice daily for three days",
+      "quantity": 6
+    }
+order: 13000

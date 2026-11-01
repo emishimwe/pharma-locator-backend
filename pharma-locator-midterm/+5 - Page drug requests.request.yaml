@@ -1,0 +1,8 @@
+$kind: http-request
+url: http://localhost:8082/api/drug-requests/page?page=0&size=5&sort=requestDate,desc
+method: GET
+queryParams:
+  page: "0"
+  size: "5"
+  sort: requestDate,desc
+order: 19000

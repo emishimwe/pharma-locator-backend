@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8082/api/pharmacists/00000000-0000-0000-0000-000000000000/qualifications/00000000-0000-0000-0000-000000000000
+method: PUT
+order: 11000

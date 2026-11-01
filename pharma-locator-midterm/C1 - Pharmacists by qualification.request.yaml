@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8082/api/pharmacists/by-qualification?name=Clinical
+method: GET
+queryParams:
+  name: Clinical
+order: 5000

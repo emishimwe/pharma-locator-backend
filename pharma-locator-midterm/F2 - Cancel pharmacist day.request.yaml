@@ -1,0 +1,7 @@
+$kind: http-request
+url: http://localhost:8082/api/drug-requests/cancel-day?pharmacistId=00000000-0000-0000-0000-000000000000&date=2026-10-20
+method: PATCH
+queryParams:
+  pharmacistId: 00000000-0000-0000-0000-000000000000
+  date: 2026-10-20
+order: 17000

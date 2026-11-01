@@ -1,0 +1,6 @@
+$kind: http-request
+url: http://localhost:8082/api/pharmacists/00000000-0000-0000-0000-000000000000/pharmacy?licenseNumber=3104
+method: PATCH
+queryParams:
+  licenseNumber: "3104"
+order: 12000

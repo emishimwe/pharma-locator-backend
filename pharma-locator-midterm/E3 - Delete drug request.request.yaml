@@ -1,0 +1,4 @@
+$kind: http-request
+url: http://localhost:8082/api/drug-requests/delete/00000000-0000-0000-0000-000000000000
+method: DELETE
+order: 15000
